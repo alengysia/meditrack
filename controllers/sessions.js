@@ -1,23 +1,24 @@
 // Dependencies
 const express = require("express")
 const bcrypt = require("bcrypt")
-const sessionsRouter = express.Router()
+const router = express.Router()
 const User = require("../models/user.js")
+const isAuthenticated = require('../utils/auth');
 
 // New (login page)
-sessionsRouter.get("/new", (req, res) => {
+router.get("/new", (req, res) => {
     res.render("sessions/new.ejs", {
       currentUser: req.session.currentUser,
     })
   })
 // Delete (logout route)
-sessionsRouter.delete("/", (req, res) => {
+router.delete("/", (req, res) => {
     req.session.destroy((error) => {
       res.redirect("/")
     })
   })
 // Create (login route)
-sessionsRouter.post("/", (req, res) => {
+router.post("/", (req, res) => {
     // Check for an existing user
     User.findOne(
       {
@@ -51,4 +52,4 @@ sessionsRouter.post("/", (req, res) => {
     )
   })
 // Export Sessions Router
-module.exports = sessionsRouter
+module.exports = router
