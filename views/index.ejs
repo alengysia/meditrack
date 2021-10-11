@@ -13,16 +13,10 @@
 
 
   <nav>
-    <% if(currentUser) { %>
-      <a href="/meds">Go to your Meds</a>
-    <form action="/sessions?_method=DELETE" method="POST">
-      <input type="submit" value="Log Out" />
-    </form>
-    <% } else { %>
+    <a href="/meds">Go to your Meds</a>
     <a href="/">Home</a>
     <a href="/users/new">Register</a>
     <a href="/sessions/new">Login</a>
-    <% } %>
   </nav>
 
 

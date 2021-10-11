@@ -5,6 +5,7 @@ const userController = require("./controllers/users")
 const sessionsController = require("./controllers/sessions")
 const medsController = require("./controllers/meds")
 const session = require("express-session")
+const isAuthenticated = require('./utils/auth');
 
 
 const app = express()
@@ -42,7 +43,7 @@ app.use(
 
 app.use("/users", userController)
 app.use("/sessions", sessionsController)
-app.use("/meds", medsController)
+app.use("/meds", isAuthenticated, medsController)
 
 // Routes / Controllers
 

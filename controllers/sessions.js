@@ -19,38 +19,23 @@ router.delete("/", (req, res) => {
     })
   })
 // Create (login route)
-router.post("/", (req, res) => {
-    // Check for an existing user
-    User.findOne(
-      {
-        email: req.body.email,
-      },
-      (error, foundUser) => {
-        // send error message if no user is found
-        if (!foundUser) {
-          res.send(`I'm sorry, no user with that email exists`)
-        } else {
-          // If a user has been found
-          // compare the given password with the hashed password we have stored
-          const passwordMatches = bcrypt.compareSync(
-            req.body.password,
-            foundUser.password
-          )
-  
-          // if the passwords match
-          if (passwordMatches) {
-            // add the user to our session
-            req.session.currentUser = foundUser
-  
-            // redirect back to our home page
-            res.redirect("/")
-          } else {
-            // if the passwords don't match
-            res.send("Oops! Invalid credentials.")
-          }
+router.post('/', (req, res) => {
+    User.findOne({ email: req.body.email }, (err, foundUser) => {
+
+        if(!foundUser) {
+            return res.render('new.ejs', {error: 'Invalid Credentials'});
         }
-      }
-    )
-  })
+
+        const isMatched = bcrypt.compareSync(req.body.password, foundUser.password);
+
+        if(!isMatched) {
+            return res.render('new.ejs', {error: 'Invalid Credentials'});
+        }
+
+        req.session.user = foundUser._id;
+
+        res.redirect('/users/dashboard')
+    });
+});
 // Export Sessions Router
 module.exports = router

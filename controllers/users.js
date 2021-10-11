@@ -3,18 +3,19 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const Meds = require('../models/med');
+const isAuthenticated = require('../utils/auth');
 
 
 
 // INDEX
 router.get("/", (req, res) => {
-        res.render('home.ejs')
+        res.render('index.ejs')
     })
     
 // NEW
 router.get("/new", (req, res) => {
     res.render("users/new.ejs", {
-      currentUser: req.session.currentUser,
+      currentUser: req.session.user,
     })
   })
 // DELETE
@@ -35,6 +36,14 @@ router.post("/", (req, res) => {
 
 // SHOW
 
+router.get('/dashboard', isAuthenticated, (req, res) => {
+    User.findById(req.session.user, (err, user) => {
+        console.log(req.session.user)
+        Meds.find({author: user._id}, (err, meds) => {
+            res.render('dashboard.ejs', { user, meds });
+        })
+    });
+});
 
 
 module.exports = router;

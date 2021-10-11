@@ -3,16 +3,21 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const Meds = require('../models/med');
-const isAuthenticated = require('../utils/auth');
+
 
 
 
 
 // Index
 router.get("/", (req, res) => {
-    Meds.find({}, (err, allMeds) => {
-        res.render('meds/index.ejs', {
-            meds: allMeds
+    const query = req.session.user ? {author: req.session.user } : {};
+    Meds.find(query, (err, meds) => {
+        
+        res.render('meds/index.ejs', { 
+            meds, 
+            user : req.session.user
+            
+            
         })
     })
 })
@@ -43,11 +48,12 @@ router.put("/:id", (req, res) => {
 
 // Create
 router.post("/", (req, res) => {
+    req.body.author = req.session.user;
     req.body.morn = !!req.body.morn;
     req.body.noon = !!req.body.noon;
     req.body.night = !!req.body.night;
     Meds.create(req.body, (err, createdMeds) => {
-        res.redirect('/')
+        res.redirect('/meds')
     })
 })
 
@@ -68,5 +74,6 @@ router.get("/:id", (req, res) => {
         })
     })
 })
+
 
 module.exports = router
