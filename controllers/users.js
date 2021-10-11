@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
-const isAuthenticated = require('../utils/auth');
+const Meds = require('../models/med');
+
 
 
 // INDEX
 router.get("/", (req, res) => {
-    res.render('index.ejs')
-})
+        res.render('home.ejs')
+    })
+    
 // NEW
 router.get("/new", (req, res) => {
     res.render("users/new.ejs", {

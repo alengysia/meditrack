@@ -3,7 +3,8 @@ const express = require("express")
 const bcrypt = require("bcrypt")
 const router = express.Router()
 const User = require("../models/user.js")
-const isAuthenticated = require('../utils/auth');
+const Meds = require('../models/med');
+
 
 // New (login page)
 router.get("/new", (req, res) => {
@@ -27,7 +28,7 @@ router.post("/", (req, res) => {
       (error, foundUser) => {
         // send error message if no user is found
         if (!foundUser) {
-          res.send(`Oops! No user with that email address has been registered.`)
+          res.send(`I'm sorry, no user with that email exists`)
         } else {
           // If a user has been found
           // compare the given password with the hashed password we have stored

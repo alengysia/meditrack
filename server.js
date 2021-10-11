@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const morgan = require('morgan')
 const userController = require("./controllers/users")
 const sessionsController = require("./controllers/sessions")
+const medsController = require("./controllers/meds")
 const session = require("express-session")
 
 
@@ -41,6 +42,7 @@ app.use(
 
 app.use("/users", userController)
 app.use("/sessions", sessionsController)
+app.use("/meds", medsController)
 
 // Routes / Controllers
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication List</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out" />
+    <div>
+        <h1>Medications</h1>
+        <a href="/meds/new">Add a new Medication</a>
+        <div>
+            <% meds.forEach(meds =>{ %>
+               <a href="/meds/<%= meds._id %>"> <h3><%= meds.medName %></h3></a>
+                <p><%= meds.dosage %>X Daily</p>
+                <form class= "edit" action="/meds/<%=meds.id%>/edit" method = "get">
+                    <Input type="Submit" value="Edit Prescription"></Input>
+                </form> 
+                <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Prescription">
+                </form>
+           <% }) %>
+            <h3></h3>
+        </div>
+    </div>
+</body>
+</html>

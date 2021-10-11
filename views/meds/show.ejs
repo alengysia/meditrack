@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= meds.name %> details</title>
+</head>
+<body>
+    <h1>test</h1>
+    <a href="/meds">Go back to meds</a>
+    <form class= "edit" action="/meds/<%=meds.id%>/edit" method = "get">
+        <Input type="Submit" value="Edit Prescription"></Input>
+    </form> 
+    <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Prescription">
+    </form>
+</body>
+</html>

@@ -12,9 +12,16 @@ const medSchema = new Schema({
     use: String,
     docFirstName: String,
     docLastName: {type: String, required: true},
-    docAddress: String,
+    docStreet: String,
+    docTown: String,
+    docState: String,
+    docZip: Number,
     docPhone: Number,
     author: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-module.exports = mongoose.model('Meds', medSchema);
+// User Model
+const Meds = mongoose.model("Meds", medSchema)
+
+// Export User Model
+module.exports = Meds
