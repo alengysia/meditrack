@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/style.css">
     <title><%= meds.medName %> details</title>
 </head>
-<body>
-    
-    <form class= "back" action="/meds" method = "get">
-        <Input type="Submit" value="Go back to meds"></Input>
-    </form> 
-    <h1><%= meds.medName %></h1>
-    <h4><%= meds.dosage%><%= meds.measure %> <%= meds.tpd %>X Daily <% if(!!meds.morn){%> At breakfast. <% } %> 
-   <% if(!!meds.noon){ %> With lunch. <%}%> <%if(!!meds.night){ %> At bedtime. <%}%> </h4>
-   <p>To treat: <%= meds.use %></p>
-   <p>The prescribing doctor is: <%= meds.docFirstName%> <%= meds.docLastName%></p>
 
-    <a href="/meds/<%=meds._id%>/edit">Edit Prescription</a>
+<body class="show">
+
+    <form class="back" action="/meds" method="get">
+        <Input type="Submit" value="Go back to meds"></Input>
+    </form>
+    <div>
+        <h1><%= meds.medName %></h1>
+        <h4><%= meds.dosage%><%= meds.measure %> <%= meds.tpd %>X Daily <% if(!!meds.morn){%> At breakfast. <% } %>
+            <% if(!!meds.noon){ %> With lunch. <%}%> <%if(!!meds.night){ %> At bedtime. <%}%> </h4>
+            <p>To treat: <span><%= meds.use %></span></p>
+            <p>The prescribing doctor is: <span><%= meds.docFirstName%> <%= meds.docLastName%></span></p>
+            <p>located at: <span><%=meds.docOffice%></span></p>
+            <p>on: <span><%=meds.docStreet%>, <%=meds.docTown%> <%=meds.docState%>, <%=meds.docZip%></span></p>
+            <p>The doctors office can be reached at: <span><%=meds.docPhone%></span></p>
+    </div>
+    <form class="edit" action="/meds/<%=meds._id%>/edit" method="get">
+        <Input type="Submit" value="Edit Prescription"></Input>
+    </form>
     <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete Prescription">
     </form>
 </body>
+
 </html>

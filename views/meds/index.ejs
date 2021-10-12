@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Medication List</title>
 </head>
-<body>
-    <form class="home" action="/" method="get">
-        <Input type="Submit" value="Home">
-    </form>
-    <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="Log Out" />
-    </form>
+
+<body class="med-index">
     <div>
-        <h1>Medications</h1>
-        <a href="/meds/new">Add a new Medication</a>
-        <div>
+        <div class="med-header">
+            <form class="home" action="/" method="get">
+                <Input type="Submit" value="Home">
+            </form>
+            <h1>Medications</h1>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" value="Log Out" />
+            </form>
+        </div>
+        <div class="new-med">
+            <form class="med-new" action="/meds/new" method="get">
+                <Input type="Submit" value="Add a new Medication"></Input>
+            </form>
+        </div>
+        <div class="med-container">
             <% meds.forEach(meds =>{ %>
-               <a href="/meds/<%= meds._id %>"> <h3><%= meds.medName %></h3></a>
-               <p><%= meds.dosage%><%= meds.measure %> <%= meds.tpd %>X Daily</p>
-               <% if(!!meds.morn){ %>
-                   <p>With breakfast</p>
-               <% } %>
-               <% if(!!meds.noon){ %>
-                   <p>With lunch</p>
-              <% } %>
-              <% if(!!meds.night){ %>
-                   <p>At bedtime</p>
-               <% } %>
-               <form class= "edit" action="/meds/<%=meds._id%>/edit" method = "get">
-                <Input type="Submit" value="Edit Prescription"></Input>
-            </form> 
-               <form action='/meds/<%=meds._id%>?_method=DELETE' method='POST'>
-                <input type="Submit" value="Delete Prescription" />
-               </form>
-           <% }) %>
+            <div class="med-table">
+                <a href="/meds/<%= meds._id %>">
+                    <h3><%= meds.medName %></h3>
+                </a>
+                <p><%= meds.dosage%><%= meds.measure %> <%= meds.tpd %>X Daily</p>
+                <% if(!!meds.morn){ %>
+                <p>With breakfast</p>
+                <% } %>
+                <% if(!!meds.noon){ %>
+                <p>With lunch</p>
+                <% } %>
+                <% if(!!meds.night){ %>
+                <p>At bedtime</p>
+                <% } %>
+                <form class="med-edit" action="/meds/<%=meds._id%>/edit" method="get">
+                    <Input type="Submit" value="Edit Prescription"></Input>
+                </form>
+                <form class="med-delete" action='/meds/<%=meds._id%>?_method=DELETE' method='POST'>
+                    <input type="Submit" value="Delete Prescription" />
+                </form>
+            </div>
+            <% }) %>
         </div>
     </div>
 </body>
+
 </html>
