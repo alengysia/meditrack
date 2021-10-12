@@ -9,9 +9,12 @@
 
   <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/users/signup">Register</a>
-        <a href="/sessions/new">Login</a>
+        <form class="home" action="/" method="get">
+            <Input type="Submit" value="Home"></Input>
+        </form>
+        <form class= "signup" action="/users/new" method = "get">
+            <Input type="Submit" value="Signup"></Input>
+        </form> 
      </nav>
     <h1>Login</h1>
     <form action="/sessions" method="POST">

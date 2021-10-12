@@ -10,18 +10,20 @@
 
 <body>
 
-
-
+<div>
+  <h1>Welcome to Meditrack!</h1>
+  <h3>Prescription tracking made easy</h3>
+</div>
   <nav>
-    <a href="/meds">Go to your Meds</a>
-    <a href="/">Home</a>
-    <a href="/users/new">Register</a>
-    <a href="/sessions/new">Login</a>
+    <form class= "signup" action="/users/new" method = "get">
+      <Input type="Submit" value="Signup"></Input>
+  </form> 
+  <form class= "login" action="/sessions/new" method = "get">
+    <Input type="Submit" value="Login"></Input>
+</form> 
   </nav>
 
 
-  <h1>Home Page</h1>
-  <p>test</p>
 </body>
 
 </html>

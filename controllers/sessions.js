@@ -3,7 +3,7 @@ const express = require("express")
 const bcrypt = require("bcrypt")
 const router = express.Router()
 const User = require("../models/user.js")
-const Meds = require('../models/med');
+
 
 
 // New (login page)
@@ -23,13 +23,13 @@ router.post('/', (req, res) => {
     User.findOne({ email: req.body.email }, (err, foundUser) => {
 
         if(!foundUser) {
-            return res.render('new.ejs', {error: 'Invalid Credentials'});
+            return res.render('sessions/new.ejs', {error: 'Invalid Credentials'});
         }
 
         const isMatched = bcrypt.compareSync(req.body.password, foundUser.password);
 
         if(!isMatched) {
-            return res.render('new.ejs', {error: 'Invalid Credentials'});
+            return res.render('sessions/new.ejs', {error: 'Invalid Credentials'});
         }
 
         req.session.user = foundUser._id;

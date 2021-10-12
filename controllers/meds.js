@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const User = require('../models/user');
 const Meds = require('../models/med');
 
 
@@ -10,14 +9,13 @@ const Meds = require('../models/med');
 
 // Index
 router.get("/", (req, res) => {
-    const query = req.session.user ? {author: req.session.user } : {};
+    const query = req.session.user ? {
+        author: req.session.user
+    } : {};
     Meds.find(query, (err, meds) => {
-        
-        res.render('meds/index.ejs', { 
-            meds, 
-            user : req.session.user
-            
-            
+        res.render('meds/index.ejs', {
+            meds,
+            user: req.session.user
         })
     })
 })
@@ -28,9 +26,9 @@ router.get("/new", (req, res) => {
 })
 
 // Delete
-router.delete('/:id', (req, res) =>{
-    Meds.findByIdAndRemove(req.params.id, (err, data) =>{
-        res.redirect('/')
+router.delete('/:id', (req, res) => {
+    Meds.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/meds')
     })
 })
 

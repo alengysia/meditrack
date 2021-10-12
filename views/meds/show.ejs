@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= meds.name %> details</title>
+    <title><%= meds.medName %> details</title>
 </head>
 <body>
-    <h1>test</h1>
-    <a href="/meds">Go back to meds</a>
-    <form class= "edit" action="/meds/<%=meds.id%>/edit" method = "get">
-        <Input type="Submit" value="Edit Prescription"></Input>
+    
+    <form class= "back" action="/meds" method = "get">
+        <Input type="Submit" value="Go back to meds"></Input>
     </form> 
+    <h1><%= meds.medName %></h1>
+    <h4><%= meds.dosage%><%= meds.measure %> <%= meds.tpd %>X Daily <% if(!!meds.morn){%> At breakfast. <% } %> 
+   <% if(!!meds.noon){ %> With lunch. <%}%> <%if(!!meds.night){ %> At bedtime. <%}%> </h4>
+   <p>To treat: <%= meds.use %></p>
+   <p>The prescribing doctor is: <%= meds.docFirstName%> <%= meds.docLastName%></p>
+
+    <a href="/meds/<%=meds._id%>/edit">Edit Prescription</a>
     <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete Prescription">
     </form>

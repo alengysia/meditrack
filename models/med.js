@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const medSchema = new Schema({
     medName: {type: String, required: true },
     dosage: {type: Number, required: true},
+    measure: {type: String, required: true},
     tpd: Number,
     morn: Boolean,
     noon: Boolean,
@@ -12,6 +13,7 @@ const medSchema = new Schema({
     use: String,
     docFirstName: String,
     docLastName: {type: String, required: true},
+    docOffice: String,
     docStreet: String,
     docTown: String,
     docState: String,

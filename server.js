@@ -38,7 +38,8 @@ app.use(
       saveUninitialized: false,
     })
   )
-  app.use(methodOverride("_method"))
+app.use(methodOverride("_method"))
+app.use(express.static('public'))
 
 
 app.use("/users", userController)

@@ -38,7 +38,6 @@ router.post("/", (req, res) => {
 
 router.get('/dashboard', isAuthenticated, (req, res) => {
     User.findById(req.session.user, (err, user) => {
-        console.log(req.session.user)
         Meds.find({author: user._id}, (err, meds) => {
             res.render('dashboard.ejs', { user, meds });
         })

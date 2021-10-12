@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Add Meds</title>
 </head>
 <body>
@@ -11,7 +13,16 @@
        <h1>Add A Presciption</h1>
        <form action="/meds" method="POST">
     <input type="text" name="medName" placeholder="Medication Name"><br>
-    <input type="number" name="dosage" placeholder="Medication doseage"><br>
+    <input type="number" name="dosage" placeholder="Medication doseage">
+    <select class="drop-down" name="measure">
+        <option value="mcg">mcg</option>
+        <option value="mg">mg</option>
+        <option value="mL">mL</option>
+        <option value="g">g</option>
+        <option value="tab">tab</option>
+        <option value="tsp">tsp</option>
+        <option value="tbsp">tbsp</option>
+    </select>
     <input type="number" name="tpd" placeholder="Taken times per day"><br>
     <div>
     Morning: <input type="checkbox" name="morn">
@@ -21,6 +32,7 @@
     <textarea name="use" placeholder=""cols="30" rows="10"></textarea><br>
     <input type="text" name="docFirstName" placeholder="Prescribing doctor's first name">
     <input type="text" name="docLastName" placeholder="Prescribing doctor's last name"><br>
+    <input type="text" name="docOffice" placeholder="Practice Name"><br>
     <input type="text" name="docStreet" placeholder="Doctor's street address"><br>
     <input type="text" name="docTown" placeholder="Doctor's Town"><br>
     <input type="text" name="docState" placeholder="State">
@@ -29,5 +41,8 @@
     <input type="submit" value="Add Medication">
     </form>
     </div>
+    <form class= "back" action="/meds" method = "get">
+        <Input type="Submit" value="Go back to meds"></Input>
+    </form> 
 </body>
 </html>
