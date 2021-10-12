@@ -8,10 +8,11 @@
 </head>
 <body>
     <form class="home" action="/" method="get">
-        <Input type="Submit" value="Home"></Input>
+        <Input type="Submit" value="Home">
     </form>
     <form action="/sessions?_method=DELETE" method="POST">
         <input type="submit" value="Log Out" />
+    </form>
     <div>
         <h1>Medications</h1>
         <a href="/meds/new">Add a new Medication</a>
@@ -28,12 +29,13 @@
               <% if(!!meds.night){ %>
                    <p>At bedtime</p>
                <% } %>
-                <a href="/meds/<%=meds._id%>/edit">Edit</a>
-                <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Prescription">
-                </form>
+               <form class= "edit" action="/meds/<%=meds._id%>/edit" method = "get">
+                <Input type="Submit" value="Edit Prescription"></Input>
+            </form> 
+               <form action='/meds/<%=meds._id%>?_method=DELETE' method='POST'>
+                <input type="Submit" value="Delete Prescription" />
+               </form>
            <% }) %>
-            <h3></h3>
         </div>
     </div>
 </body>

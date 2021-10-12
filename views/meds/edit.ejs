@@ -10,9 +10,9 @@
     <div class="container-edit">
         <h1>Edit A Presciption</h1>
         <form action="/meds/<%=meds._id%>?_method=PUT" method="POST">
-        <input type="text" name="medName" placeholder="Medication Name"><br>
-        <input type="number" name="dosage" placeholder="Medication doseage"><br>
-        <select class="drop-down" name="measure">
+        <input type="text" name="medName" value="<%= meds.medName%>"><br>
+        <input type="number" name="dosage" value="<%=meds.dosage%>"><br>
+        <select class="drop-down" name="measure" value="<%=meds.measure%>">
             <option value="mcg">mcg</option>
             <option value="mg">mg</option>
             <option value="mL">mL</option>
@@ -21,21 +21,21 @@
             <option value="tsp">tsp</option>
             <option value="tbsp">tbsp</option>
         </select>
-        <input type="number" name="tpd" placeholder="Taken times per day"><br>
+        <input type="number" name="tpd" value="<%=meds.tpd%>"><br>
         <div>
             Morning: <input type="checkbox" name="morn">
             Noon: <input type="checkbox" name="noon">
             Night: <input type="checkbox" name="night"><br>
         </div>
-        <textarea name="use" placeholder=""cols="30" rows="10"></textarea><br>
-        <input type="text" name="docFirstName" placeholder="Prescribing doctor's first name">
-        <input type="text" name="docLastName" placeholder="Prescribing doctor's last name"><br>
-        <input type="text" name="docOffice" placeholder="Practice Name"><br>
-        <input type="text" name="docStreet" placeholder="Doctor's street address"><br>
-        <input type="text" name="docTown" placeholder="Doctor's Town"><br>
-        <input type="text" name="docState" placeholder="State">
-        <input type="number" name="docZip" placeholder="Zipcode"><br>
-        Prescribing doctor's phone number: <input type="tel" name="docPhone"><br>
+        <input class="text-area" type="text" name="use" value="<%=meds.use%>"><br>
+        <input type="text" name="docFirstName" value="<%=meds.docFirstName%>">
+        <input type="text" name="docLastName" value="<%=meds.docLastName%>"><br>
+        <input type="text" name="docOffice" value="<%=meds.docOffice%>"><br>
+        <input type="text" name="docStreet" value="<%=meds.docStreet%>"><br>
+        <input type="text" name="docTown" value="<%=meds.docTown%>"><br>
+        <input type="text" name="docState" value="<%=meds.docState%>">
+        <input type="number" name="docZip" value="<%=meds.docZip%>"><br>
+        Prescribing doctor's phone number: <input type="tel" name="docPhone" value="<%=meds.docPhone%>"><br>
         <input type="submit" value="Update Medication">
     </form>
     <form class= "back" action="/meds" method = "get">
