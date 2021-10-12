@@ -7,24 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Home</title>
 </head>
 
 <body class="index">
 
-<div>
+<div class="index-container">
   <h1>Welcome to Meditrack!</h1>
   <h3>Prescription tracking made easy</h3>
   <h4>Take control of your wellness</h4>
-</div>
   <nav>
+    <div class="home-nav">
     <form class= "signup" action="/users/new" method = "get">
       <Input type="Submit" value="Signup"></Input>
-  </form> 
-  <form class= "login" action="/sessions/new" method = "get">
-    <Input type="Submit" value="Login"></Input>
-</form> 
+    </form> 
+    <form class= "login" action="/sessions/new" method = "get">
+      <Input type="Submit" value="Login"></Input>
+    </form> 
+  </div>
   </nav>
+</div>
 
 
 </body>

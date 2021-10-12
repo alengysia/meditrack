@@ -1,3 +1,57 @@
+
+.index{
+    background-image: url(https://www.decatur-parks.org/wp-content/uploads/2018/09/Fall-Leaves-Wallpaper-On-Wallpaper-Hd.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+@media (max-width: 800px){
+    .index{
+        background-image: url(https://www.decatur-parks.org/wp-content/uploads/2018/09/Fall-Leaves-Wallpaper-On-Wallpaper-Hd.png);
+        background-size: auto;
+    }   
+}
+
+
+.index-container{
+    background-color: #e5ccc9;
+    border-radius: 10px;
+    border: 4px solid #e05648;
+    width: 400px;
+    height: 500px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Hind', sans-serif;
+}
+@media(max-width: 800px){
+    .index-container{
+        width: 250px;
+        text-align: center;
+        margin-top: 70px;
+    }
+}
+
+.index-container h3,
+.index-container h4 {
+    margin-top: 50px;
+}
+.home-nav{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+
+
+
+
+
 .drop-down{
     width: 55px;
 }
