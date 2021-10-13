@@ -14,7 +14,7 @@
 </head>
 
 <body class="show">
-
+    <div class="show-container">
     <form class="back" action="/meds" method="get">
         <Input type="Submit" value="Go back to meds"></Input>
     </form>
@@ -34,6 +34,7 @@
     <form action="/meds/<%= meds.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete Prescription">
     </form>
+    </div>
 </body>
 
 </html>
