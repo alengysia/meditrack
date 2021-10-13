@@ -145,6 +145,102 @@
     }
 }
 
+.register{
+    background-image: url(https://images.unsplash.com/photo-1621536334200-8e8667c4b108?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width:800px){
+    .register{
+        background-size: auto;
+    }
+}
+
+.register-container{
+    background-color: #e6e8fa;
+    border: 4px solid #8a95ff;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    margin-top: 150px;
+
+}
+
+@media(max-width: 800px){
+    .register-container {
+        width: 300px;
+        margin-top: 75px;
+    }
+}
+
+.reg-nav{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35px;
+    margin-top: 25px;
+}
+
+@media(max-width: 800px){
+    .reg-nav{
+        width: 230px;
+    }
+}
+
+.register h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reg-name-label,
+.reg-email-label{
+    margin-left: 50px;
+}
+
+.reg-name-input{
+    margin-left: 50px;
+    
+}
+@media(max-width: 800px){
+    .reg-name-label,
+    .reg-email-label{
+        margin-left: 15px;
+    }
+}
+.reg-email-input {
+    margin-left: 53px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reg-pass-label {
+    margin-left: 50px;
+}
+
+.reg-pass-input{
+    margin-left: 23px;
+}
+@media(max-width: 800px){
+    .reg-pass-label {
+        margin-left: 15px;
+    }
+}
+
+.reg-sub {
+    width: 200px;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+@media(max-width: 800px){
+
+}
+
+
+
+
 .dashboard{
     background-image: url(https://www.wallpaperbetter.com/wallpaper/410/48/956/hydrangea-1080P-wallpaper.jpg);
     background-repeat: no-repeat; 

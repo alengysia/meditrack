@@ -14,37 +14,29 @@
 </head>
 
 <body class="register">
-
-    <nav>
-        <% if(currentUser) { %>
+    <div class="register-container">
+        <nav class="reg-nav">
         <form class="home" action="/" method="get">
             <Input type="Submit" value="Home"></Input>
         </form>
-        <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Log Out" />
-        </form>
-        <% } else { %>
-        <form class="home" action="/" method="get">
-            <Input type="Submit" value="Home"></Input>
-        </form>
-        <form class="login" action="/sessions/new" method="get">
+        <form action="/sessions/new" method="get">
             <Input type="Submit" value="Login"></Input>
         </form>
-        <% } %>
-    </nav>
+        </nav>
     <h1>Register</h1>
     <form action="/users" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" /><br>
+        <label class="reg-name-label" for="name">Name:</label>
+        <input class="reg-name-input" type="text" name="name" id="name" /><br>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" /><br>
+        <label class="reg-email-label" for="email">Email:</label>
+        <input class="reg-email-input" type="email" name="email" id="email" /><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" /><br>
+        <label class="reg-pass-label" for="password">Password:</label>
+        <input class="reg-pass-input" type="password" name="password" id="password" /><br>
 
-        <input type="submit" value="Register" />
+        <input class="reg-sub" type="submit" value="Register" />
     </form>
+    </div>
 </body>
 
 </html>
