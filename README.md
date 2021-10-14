@@ -13,5 +13,22 @@
 - mongoose
 - google fonts
 
+![screenshot main](/img/main.png)
+![screenshot login](/img/login.png)
+![screenshot meds](/img/meds.png)
+![screenshot show](/img/show.png)
+![screenshot add](/img/add.png)
+![screenshot erd](/img/ERD.png)
+![screenshot flow](/img/flow.png)
+
+### See Deployed site here!
 
 
+
+
+#### Future enhancements
+
+<p>alerts to remind you to take your medications at specific times</p>
+<p>Autofill medication names</p>
+<p>cross check for drug interactions</p>
+<p>Alerts when a prescription needs to be refilled</p>
