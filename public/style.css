@@ -8,6 +8,7 @@
     align-items: center;
 
 }
+
 @media (max-width: 800px){
     .index{
         background-size: auto;
@@ -26,6 +27,7 @@
     align-items: center;
     font-family: 'Hind', sans-serif;
 }
+
 @media(max-width: 800px){
     .index-container{
         width: 300px;
@@ -38,6 +40,7 @@
 .index-container h4 {
     margin-top: 50px;
 }
+
 .home-nav{
     width: 200px;
     display: flex;
@@ -203,12 +206,14 @@
     margin-left: 50px;
     
 }
+
 @media(max-width: 800px){
     .reg-name-label,
     .reg-email-label{
         margin-left: 15px;
     }
 }
+
 .reg-email-input {
     margin-left: 53px;
     margin-top: 20px;
@@ -222,6 +227,7 @@
 .reg-pass-input{
     margin-left: 23px;
 }
+
 @media(max-width: 800px){
     .reg-pass-label {
         margin-left: 15px;
@@ -233,14 +239,12 @@
     margin-top: 40px;
     margin-left: 100px;
 }
+
 @media(max-width: 800px){
     .reg-sub{
         margin-left: 50px;
     }
 }
-
-
-
 
 .dashboard{
     background-image: url(https://www.wallpaperbetter.com/wallpaper/410/48/956/hydrangea-1080P-wallpaper.jpg);
@@ -316,6 +320,7 @@
 .drop-down{
     width: 55px;
 }
+
 span {
     font-weight: bold;
 }
@@ -324,6 +329,7 @@ span {
     background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Download-Grass-Backgrounds.jpg);
     background-attachment:fixed;
 }
+
 .med-index a{
     font-family: 'Hind', sans-serif;
     text-decoration: none;
@@ -367,18 +373,22 @@ span {
     margin-left: 5px;
     border-radius: 10px;
 }
+
 input[type="submit"]{
     background-color: #ff8903;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
 }
+
 input{
     height: 35px;
     border-radius: 10px;
 }
+
 .med-delete{
     margin-top: 15px;
 }
+
 @media(max-width:800px){
     .med-container{
     display: flex;
@@ -403,6 +413,7 @@ input{
         margin-top: 75px;
     }
 }
+
 .show-container {
     background-color: #fff8dc;
     border: 4px solid #fae387;
@@ -433,6 +444,7 @@ input{
     background-image: url(https://images.unsplash.com/photo-1456298964505-ef9e1a638209?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2148&q=80);
     display: flex;
     justify-content: center;
+    background-attachment:fixed;
 }
 
 @media(max-width: 800px){
@@ -466,6 +478,7 @@ input{
     margin-top: 15px;
     width: 200px;
 }
+
 @media(max-width: 800px){
     .new-input,
     .text-area,
@@ -517,11 +530,13 @@ input{
     margin-left: 45px;
     margin-top: 40px;
 }
+
 @media(max-width: 800px){
     .new-nav{
        flex-direction: column;
     }
 }
+
 @media(max-width: 800px){
     .add-new{
         width: 200px;
@@ -535,6 +550,7 @@ input{
     display: flex;
     justify-content: center;
     margin-top: 150px;
+    background-attachment:fixed;
 }
 
 @media(max-width:800px){
@@ -553,6 +569,7 @@ input{
     height: 700px;
     text-align: center;
 }
+
 @media(max-width: 800px){
     .container-edit{
         width: 300px;
