@@ -13,13 +13,13 @@
 - mongoose
 - google fonts
 
-![screenshot main](/img/main.png)
-![screenshot login](/img/login.png)
-![screenshot meds](/img/meds.png)
-![screenshot show](/img/show.png)
-![screenshot add](/img/add.png)
-![screenshot erd](/img/ERD.png)
-![screenshot flow](/img/flow.png)
+![screenshot main](./assets/img/main.png)
+![screenshot login](./assets/img/login.png)
+![screenshot meds](./assets/img/meds.png)
+![screenshot show](./assets/img/show.png)
+![screenshot add](./assets/img/add.png)
+![screenshot erd](./assets/img/ERD.png)
+![screenshot flow](./assets/img/flow.png)
 
 ### See Deployed site here!
 
