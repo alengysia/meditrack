@@ -168,7 +168,7 @@
     width: 400px;
     height: 500px;
     margin-top: 150px;
-
+    font-family: 'Hind', sans-serif;
 }
 
 @media(max-width: 800px){
@@ -269,6 +269,7 @@
     margin-top: 150px;
     border-radius: 10px;
     text-align: center;
+    font-family: 'Hind', sans-serif;
 }
 
 @media(max-width: 800px){
@@ -374,6 +375,10 @@ span {
     border-radius: 10px;
 }
 
+.med-table h3{
+    margin-top: 7px;
+}
+
 input[type="submit"]{
     background-color: #ff8903;
     font-family: 'Nunito', sans-serif;
@@ -421,6 +426,7 @@ input{
     width: 400px;
     height: 500px;
     text-align: center;
+    font-family: 'Hind', sans-serif;
 }
 
 @media(max-width: 800px){
@@ -461,6 +467,7 @@ input{
     height: 700px;
     margin-top: 150px;
     text-align: center;
+    font-family: 'Hind', sans-serif;
 }
 
 @media(max-width: 800px){
@@ -568,6 +575,7 @@ input{
     width: 500px;
     height: 700px;
     text-align: center;
+    font-family: 'Hind', sans-serif;
 }
 
 @media(max-width: 800px){
